@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset password</title>
+</head>
+<body>
+<h2>Reset password</h2>
+
+<form>
+<p>
+  <label for="new-pw">New password:</label><br>
+  <input type="text" id="new-pw" name="new-pw"><br>
+
+  <label for="rp-pw">Repeat new password:</label><br>
+  <input type="text" id="rp-pw" name="rp-pw"><br>
+</p>
+</form> 
+
+</body>
+</html>
