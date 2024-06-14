@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password forgotten</title>
+</head>
+<body>
+<h2>Password forgotten</h2>
+
+<form>
+<p>
+  <label for="uname">Username:</label><br>
+  <input type="text" id="uname" name="uname"><br>
+</p>
+</form> 
+
+<p>OR</p>
+
+<form>
+<p>
+  <label for="pw">Password:</label><br>
+  <input type="text" id="pw" name="pw"><br>
+</p>
+</form> 
+
+</body>
+</html>
