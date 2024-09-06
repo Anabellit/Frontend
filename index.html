@@ -1,42 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>HouseSwap</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>HouseSwap - Start</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Search for Accommodations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Requests</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Sign up / Log in
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Sign up</a>
-          <a class="dropdown-item" href="#">Log in</a>
+<nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
+    <div class="container-lg">
+        <a class="navbar-brand aleg" href="index.html" style="color: floralwhite; font-size:22px;"><i
+                class="bi bi-house-check"></i> HouseSwap</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartoggle"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbartoggle">
+            <ul class="nav work col-12" style="justify-content: flex-end">
+
+                <li class="nav-item dropdown-center col-3 pe-0 work"
+                    style="display: flex; justify-content: flex-end">
+                    <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false" style="color: floralwhite"><i class="bi bi-box-arrow-in-right"
+                                                                           style="font-size: 20px;"></i>
+                        Sign up / Log in
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="registration%20personal.html">Sign up</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="login.html">Log in</a></li>
+                        <li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-      </li>
-    </ul>
-  </div>
+    </div>
 </nav>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<div class="container-lg">
+    <p></p>
+    <h3>Welcome to HouseSwap!</h3>
+    <p></p>
+    <p class="mb-0 aleg">Live in another city and start your new life!</p>
+    <a href="registration%20personal.html" class="aleg" style="display: flex;">Sign up and start
+        today!</a>
+    <p class="pt-2"></p>
+    <div class="alt-bg py-3 px-5 me-5">
+    <h5 >How does it work?</h5>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-plus-circle"></i></li>
+        <li class="list-inline-item info">Register and create a profile of your own home - for free! Give a
+            comprehensive description of your home, your city and your neighborhood.
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-images"></i></li>
+        <li class="list-inline-item info">Upload photos of your home to give insights in what makes your home unique and
+            special.
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-search-heart"></i></li>
+        <li class="list-inline-item info">Go to our catalog and search for accommodation. You can search by city name
+            and filter by country and type of
+            house.
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-chat-dots"></i></i></li>
+        <li class="list-inline-item info">If you found what you're looking for, send a request to swap and introduce
+            yourself.
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-patch-check"></i></li>
+        <li class="list-inline-item info">If your request gets accepted: you can start your new life!
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item"><i class="bi bi-binoculars"></i></li>
+        <li class="list-inline-item info">Should you not have found what you've been looking for, check back as new
+            homes are uploaded every day!
+        </li>
+    </ul>
+
+    <p class="mb-0"><strong>Check out a selection of available homes below!</strong></p>
+        </div>
+
+    <p class="pt-2"></p>
+    <!--erste reihe-->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gy-5 me-5">
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/308/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Cannes, France</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/315/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Vienna, Austria</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/318/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Paris, France</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/323/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Krk, Croatia</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--zweite reihe-->
+    <p></p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gy-5 me-5">
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/369/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Cannes, France</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/376/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Manhattan, USA</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/391/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Dubai, VAE</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/392/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Fremont, USA</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--dritte reihe-->
+    <p></p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gy-5 me-5">
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/398/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Cannes, France</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/397/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Maurizia, Italy</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/419/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Lisbon, Portugal</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col">
+            <a class="card" href="acc-details.html" style="text-decoration: none;">
+                <img src="https://picsum.photos/id/424/200" class="card-img-top" alt="...">
+                <div class="card-body" href="#">
+                    <p class="card-title card-tag">APARTMENT</p>
+                    <p class="card-text" style="font-size: 14px">Krk, Croatia</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script src="user.js"></script>
+</div>
 </body>
+<footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
+    <div class="container-lg">
+        <div class="col-md-4 d-flex align-items-center justify-items-center">
+            <span class="mb-3 me-2 mb-md-0 text-decoration-none lh-1" style="color: floralwhite">HomeSwap</span>
+            <span class="mb-3 mb-md-0 col-md-10" style="color: floralwhite">© 2024 HomeSwap Co KG</span>
+        </div>
+    </div>
+</footer>
 </html>
