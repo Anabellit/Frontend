@@ -1,0 +1,30 @@
+[
+  {
+    "userid": "1",
+    "salutation": "Mrs.",
+    "other": "",
+    "email": "mimi@sierra.com",
+    "password": "ABcd1234$$$$",
+    "country": "Austria",
+    "picture": "https://picsum.photos/200"
+  },
+  {
+    "userid": "2",
+    "salutation": "Other",
+    "other": "Diverse",
+    "email": "mimi@sierra.com",
+    "password": "ABcd1234$$$$",
+    "country": "Germany",
+    "picture": "https://picsum.photos/200"
+  },
+  {
+    "userid": "3",
+    "salutation": "Mr.",
+    "other": "",
+    "email": "marty@sierra.com",
+    "password": "ABcd1234!!!!",
+    "country": "France",
+    "picture": "https://picsum.photos/200"
+  }
+]
+

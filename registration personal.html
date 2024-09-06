@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration: Personal Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
+    <div class="container-lg">
+        <a class="navbar-brand aleg" href="index.html" style="color: floralwhite; font-size:22px;"><i
+                class="bi bi-house-check"></i> HouseSwap</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartoggle"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<div class="container-lg">
+    <!--header bereich über form-->
+    <div class="row">
+        <p></p>
+        <div class="col-12">
+            <div class="col-6">
+                <h4>Register: Personal Details</h4>
+            </div>
+        </div>
+    </div>
+
+    <!--form-->
+    <form class="row was-validated">
+        <div class="card col-5 m-3" id="pers-reg-form">
+            <div class="card-body">
+                <p></p>
+                <div class="col-12">
+                    <label for="select-salut" class="form-label">Salutation</label>
+                    <select class="form-select" id="select-salut" aria-label="Salutation Options" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="1">Mr</option>
+                        <option value="2">Mrs</option>
+                        <option value="3">Other</option>
+                    </select>
+                    <p></p>
+                    <div class="form-group">
+                    <label for="other" class="form-label">Please define Other:</label>
+                    <input type="text" class="form-control" id="other" aria-describedby="otherHelper">
+                    <div class="col-12 text-end">
+                        <span id="otherHelper" class="form-text text-end">max. 30 characters</span>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                        <p></p>
+                    <div class="form-group">
+                    <label for="pw" class="form-label">Password</label>
+                    <input type="password" id="pw" class="form-control" aria-describedby="passwordHelpBlock" required>
+                    <div class="col-12 text-end">
+                        <span id="passwordHelpBlock" class="form-text text-end"> Min. 12 characters: uppercase, lowercase, numbers and special characters.</span>
+                    </div>
+                        </div>
+                    <p></p>
+                    <div id="form-group">
+                    <label for="pw2" class="form-label">Repeat password</label>
+                    <input type="password" id="pw2" class="form-control" required>
+                    <p></p>
+                    </div>
+                    <label for="select-country" class="form-label">Country</label>
+                    <select class="form-select" aria-label="Country" id="select-country" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="1">Austria</option>
+                        <option value="2">Germany</option>
+                        <option value="3">France</option>
+                    </select>
+                    <p></p>
+                    <label for="formFile" class="form-label">Profile Picture</label>
+                    <input class="form-control" type="file" id="formFile" aria-describedby="fileHelper">
+                    <div class="col-12 text-end">
+                        <span id="fileHelper" class="form-text text-end">Max file size 1024MB. Allowed formats: .jpg, .png, .gif</span>
+                    </div>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-end">
+                        <input class="btn sec me-2" type="reset" value="Reset">
+                        <button class="btn prim" type="submit" id="btn-pers-reg">Save
+                            and Next</button>
+                        <!--<a class="btn prim" href="registration%20accommodation.html" role="button" type="submit"></a>-->
+                    </div>
+                </div>
+            </div>
+            <p></p>
+        </div>
+    </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</div>
+</body>
+<footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
+    <div class="container-lg">
+        <div class="col-md-4 d-flex align-items-center justify-items-center">
+            <span class="mb-3 me-2 mb-md-0 text-decoration-none lh-1" style="color: floralwhite">HomeSwap</span>
+            <span class="mb-3 mb-md-0 col-md-10" style="color: floralwhite">© 2024 HomeSwap Co KG</span>
+        </div>
+    </div>
+</footer>
+</html>

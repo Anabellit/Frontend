@@ -1,0 +1,100 @@
+[
+  {
+    "userid": "1",
+    "accid": "5",
+    "type": "House",
+    "country": "Austria",
+    "title": "Lovely apartment in the heart of Vienna",
+    "subtitle": "Spacious 110м2 flat in the city center",
+    "short": "Ideal for couples. Cosy apartment in a safe and hip district.",
+    "long": "Experience Vienna's vibrant 9th district in our bright and super spacious apartment. With 110,4 square meters, central but calm location, 2 separate bedrooms with grand king-size beds, kitchen and living room, this completely renovated haven, bathed in natural light, accommodates up to 6 (+ small child) guests. It’s located on the second floor and is effortlessly accessible by both stairs and elevator. Pet-friendly! An unforgettable experience in Vienna awaits!\n\nThis place is equipped with absolutely everything you need for a pleasant stay. Windows overlook the inner courtyard and the street, which means that you can observe the street life from inside, but noises from outside won’t keep you from enjoying the pleasant atmosphere in the apartment.",
+    "amenities": {
+      "selfcheckin": true,
+      "kitchen": true,
+      "wifi": true,
+      "streaming": false,
+      "homeoffice": false,
+      "supermarkets": true
+    },
+    "photos": [
+      {
+        "photo1": "https://picsum.photos/200"
+      },
+      {
+        "photo2": "https://picsum.photos/200"
+      },
+      {
+        "photo3": "https://picsum.photos/200"
+      },
+      {
+        "photo4": "https://picsum.photos/200"
+      }
+    ]
+  },
+
+  {
+    "userid": "2",
+    "accid": "8",
+    "type": "Apartment",
+    "country": "Germany",
+    "title": "Exklusive Apartments in Kieler City",
+    "subtitle": "The property is close to several well-known attractions ",
+    "short": "The apartment offers city views, a sun terrace, and free Wifi is available throughout the property",
+    "long": "The units come with parquet floors and feature a fully equipped kitchen with a dishwasher, a dining area, a flat-screen TV with streaming services, and a private bathroom with bath and a hair dryer. An oven, a toaster, and fridge are also offered, as well as a coffee machine and a kettle. At the apartment complex, units are fitted with bed linen and towels.\n\nDuring the colder months, guests can enjoy winter sports in the surrounding area.\n\nPopular points of interest near the apartment include Sparkassen-Arena, Sophienhof, and St. Nikolaus Church. The nearest airport is Hamburg Airport, 54 miles from Exklusive Apartments in Kieler City.",
+    "amenities": {
+      "selfcheckin": false,
+      "kitchen": true,
+      "wifi": true,
+      "streaming": false,
+      "homeoffice": true,
+      "supermarkets": true
+    },
+    "photos": [
+      {
+        "photo1": "https://picsum.photos/200"
+      },
+      {
+        "photo2": "https://picsum.photos/200"
+      },
+      {
+        "photo3": "https://picsum.photos/200"
+      },
+      {
+        "photo4": "https://picsum.photos/200"
+      }
+    ]
+  },
+  {
+    "userid": "3",
+    "accid": "4",
+    "type": "Tiny House",
+    "country": "France",
+    "title": "Ferme Saint Christophe",
+    "subtitle": "Ferme Saint Christophe is a 17th-century cottage",
+    "short": "Guests can use the free bicycles to explore the heart of Bretagne.",
+    "long": "Views of the garden, free Wi-Fi and a seating area with an LCD TV are standard facilities in the apartments at Ferme Saint Christophe. Some have exposed stone walls and washing machines are also provided. All accommodations have kitchen equipment including an oven and dishwasher. Alternatively, guests can use the barbecue facilities to prepare meals. A breakfast basket can be delivered to the cottage daily.",
+    "amenities": {
+      "selfcheckin": false,
+      "kitchen": true,
+      "wifi": true,
+      "streaming": true,
+      "homeoffice": true,
+      "supermarkets": true
+    },
+    "photos": [
+      {
+        "photo1": "https://picsum.photos/200"
+      },
+      {
+        "photo2": "https://picsum.photos/200"
+      },
+      {
+        "photo3": "https://picsum.photos/200"
+      },
+      {
+        "photo4": "https://picsum.photos/200"
+      }
+    ]
+  }
+]
+
