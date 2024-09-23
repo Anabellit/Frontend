@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
     <div class="container-lg">
-        <a class="navbar-brand aleg" href="search-accommodation.html" style="color: floralwhite; font-size:22px;"><i
+        <a class="navbar-brand aleg" href="index.html" style="color: floralwhite; font-size:22px;"><i
                 class="bi bi-house-check"></i> HouseSwap</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartoggle"
@@ -22,34 +22,21 @@
         <div class="collapse navbar-collapse" id="navbartoggle">
             <ul class="nav work col-12" style="justify-content: flex-end">
 
-                <li class="nav-item col-3 pe-0" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link active work" href="search-accommodation.html" style="color: floralwhite">Search
-                        for Accommodation</a>
-                </li>
-
-                <li class="nav-item col-3" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests<span
-                            class="badge rounded-pill bg-danger">4</span>
-                    </a>
-                </li>
-
                 <li class="nav-item dropdown-center col-3 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false" style="color: floralwhite">
-                        Mimi Sierra
+                       aria-expanded="false" style="color: floralwhite"><i class="bi bi-box-arrow-in-right"
+                                                                           style="font-size: 20px;"></i>
+                        Sign up / Log in
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="user-profile.html">User Profile</a></li>
+                        <li><a class="dropdown-item" href="registration%20personal.html">Sign up</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="my-accommodation.html">My Accommodation</a></li>
+                        <li><a class="dropdown-item" href="login.html">Log in</a></li>
                         <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="index.html">Log out</a></li>
                     </ul>
                 </li>
             </ul>
@@ -67,11 +54,6 @@
         <div class="col-10">
             <h3>Lovely apartment in the heart of Vienna</h3>
         </div>
-        <div class="col-2 d-flex justify-content-end">
-            <button type="button" class="btn prim text-end" data-bs-toggle="modal" data-bs-target="#swap-modal">
-                Let's Swap!
-            </button>
-        </div>
         <p></p>
     </div>
 
@@ -84,9 +66,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body pt-0">
-                    <form class="was-validated novalidate">
-                        <label for="message-text" class="col-form-label">Your message: *</label>
-                        <textarea class="form-control" id="message-text" required></textarea>
+                    <form>
+                        <label for="message-text" class="col-form-label">Your message:</label>
+                        <textarea class="form-control" id="message-text"></textarea>
 
                     </form>
                 </div>
@@ -189,7 +171,7 @@
             crossorigin="anonymous"></script>
 </div>
 </body>
-<footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
+<footer class="d-flex py-3 mt-4 border-top sticky-bottom" style="background-color: #6B9797; ">
     <div class="container-lg">
         <div class="col-md-4 d-flex align-items-center justify-items-center">
             <span class="mb-3 me-2 mb-md-0 text-decoration-none lh-1" style="color: floralwhite">HomeSwap</span>

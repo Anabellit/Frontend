@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <!--NAVBAR-->
 <body>
@@ -27,7 +28,7 @@
     </div>
     <!--CARD-->
     <!--LEFT-->
-    <form class="was-validated">
+    <form class="was-validated novalidate">
         <div class="row m-1">
             <div class="card col-12 p-2">
                 <div class="card-body col-12 ps-4 pe-0">
@@ -35,42 +36,80 @@
                         <div class="col-6">
 
                             <p class="tag">Basic Information</p>
-                            <label for="select-type" class="form-label">Type of Housing</label>
-                            <select class="form-select" id="select-type" aria-label="Type of Housing" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option value="1">Apartment</option>
-                                <option value="2">House</option>
-                                <option value="3">Tiny House</option>
-                            </select>
-                            <label for="select-country-house" class="form-label pt-3">Country</label>
-                            <select class="form-select" id="select-country-house" aria-label="Country" required>
-                                <option selected disabled value="">Choose...</option>
-                                <option value="1">Austria</option>
-                                <option value="2">Germany</option>
-                                <option value="3">France</option>
-                            </select>
+                            <div>
+                                <label for="select-type" class="form-label">Type of Housing *</label>
+                                <select class="form-select" id="select-type" aria-label="Type of Housing" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="House">House</option>
+                                    <option value="Tiny House">Tiny House</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose the type of your accommodation.</div>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
 
-                            <p></p>
-                            <p class="tag pt-3">Description</p>
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" aria-describedby="titleHelp" required>
-                            <div class="col-12 text-end">
-                                <span id="titleHelp" class="form-text">max. 30 characters</span>
+                            <div>
+                                <label for="select-country-house" class="form-label pt-3">Country *</label>
+                                <select class="form-select" id="select-country-house" aria-label="Country" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="France">France</option>
+                                </select>
+                                <div class="invalid-feedback">Please choose the location of your accommodation.</div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
-                            <label for="subtitle" class="form-label pt-1">Subtitle</label>
-                            <input type="text" class="form-control" id="subtitle" aria-describedby="subtitleHelper" required>
-                            <div class="col-12 text-end">
-                                <span id="subtitleHelper" class="form-text text-end">max. 30 characters</span>
+
+                            <p class="tag pt-5">Description</p>
+                            <div>
+                                <label for="title" class="form-label">Title *</label>
+                                <input type="text" class="form-control" id="title" aria-describedby="titleHelp" required
+                                       maxlength="50">
+                                <div class="col-12 text-end">
+                                    <span id="titleHelp" class="form-text">max. 50 characters</span>
+                                </div>
+                                <div class="invalid-feedback">Please fill in a title for the description of your
+                                    accommodation.
+                                </div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
-                            <label for="short" class="form-label pt-1">Short Description</label>
-                            <input type="text" class="form-control" id="short" aria-describedby="shortHelper" required>
-                            <div class="col-12 text-end">
-                                <span id="shortHelper" class="form-text text-end">max. 30 characters</span>
+                            <div>
+                                <label for="subtitle" class="form-label pt-1">Subtitle *</label>
+                                <input type="text" class="form-control" id="subtitle" aria-describedby="subtitleHelper"
+                                       required maxlength="50">
+                                <div class="col-12 text-end">
+                                    <span id="subtitleHelper" class="form-text text-end">max. 50 characters</span>
+                                </div>
+                                <div class="invalid-feedback">Please fill in a subtitle for the description of your
+                                    accommodation.
+                                </div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
-                            <label for="long" class="form-label pt-1">Description</label>
-                            <textarea class="form-control" id="long" rows="3" aria-describedby="longHelper" required></textarea>
-                            <div class="col-12 text-end">
-                                <span id="longHelper" class="form-text text-end">max. 1000 characters</span>
+
+                            <div>
+                                <label for="short" class="form-label pt-1">Short Description *</label>
+                                <input type="text" class="form-control" id="short" aria-describedby="shortHelper"
+                                       required maxlength="50">
+                                <div class="col-12 text-end">
+                                    <span id="shortHelper" class="form-text text-end">max. 50 characters</span>
+                                </div>
+                                <div class="invalid-feedback">Please fill in a short description of your
+                                    accommodation.
+                                </div>
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                            <div>
+                                <label for="long" class="form-label pt-1">Description *</label>
+                                <textarea class="form-control" id="long" rows="3" aria-describedby="longHelper"
+                                          placeholder="Fill in your description here"
+                                          required maxlength="1000"></textarea>
+                                <div class="col-12 text-end">
+                                    <span id="longHelper" class="form-text text-end">max. 1000 characters</span>
+                                </div>
+                                <div class="invalid-feedback">Please fill in a description of your
+                                    accommodation. Include what makes it special and worthwhile.
+                                </div>
+                                <div class="valid-feedback">Looks good!</div>
                             </div>
                         </div>
 
@@ -86,44 +125,46 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="checkin">
+                                        <input class="form-check-input" type="checkbox" value="checkin" id="checkin">
                                         <label class="form-check-label" for="checkin">Self Check-in</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="kitchen">
+                                        <input class="form-check-input" type="checkbox" value="kitchen" id="kitchen">
                                         <label class="form-check-label" for="kitchen">Kitchen</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="wifi">
+                                        <input class="form-check-input" type="checkbox" value="wifi" id="wifi">
                                         <label class="form-check-label" for="wifi">WIFI</label></div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="streaming">
+                                        <input class="form-check-input" type="checkbox" value="streaming" id="streaming">
                                         <label class="form-check-label" for="streaming">Streaming</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="home">
-                                        <label class="form-check-label" for="home">Home Office</label></div>
+                                        <input class="form-check-input" type="checkbox" value="homeoffice" id="homeoffice">
+                                        <label class="form-check-label" for="homeoffice">Home Office</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="supermarkets">
+                                        <input class="form-check-input" type="checkbox" value="supermarkets" id="supermarkets">
                                         <label class="form-check-label" for="supermarkets">Supermarkets</label></div>
                                 </div>
                             </div>
 
-                            <p></p>
-                            <p class="tag pt-3">Photos of your Accommodation</p>
-                            <label for="formFile" class="form-label">Photos</label>
-                            <input class="form-control" type="file" id="formFile" aria-describedby="fileHelper" required>
+
+                            <p class="tag pt-5">Photos of your Accommodation</p>
+                            <label for="formFile" class="form-label">Photos *</label>
+                            <input class="form-control" type="file" id="formFile" aria-describedby="fileHelper" required
+                                   multiple>
                             <div class="col-12 text-end">
                 <span id="fileHelper"
-                      class="form-text">Max file size 1024MB. Allowed formats: .jpg, .png, .gif</span>
+                      class="form-text">max. file size 1024MB. Allowed formats: .jpg, .png, .gif</span>
                             </div>
                             <p></p>
                             <p></p>
                             <div class="row">
                                 <div class="col-12 text-end">
-                                    <a class="btn sec me-2" href="registration%20personal.html" role="button" type="submit">Cancel</a>
-                                    <button class="btn prim" type="submit">Register</button>
-                                    <!--<a class="btn prim" href="my-accommodation.html" role="button" type="submit">Register</a>-->
+                                    <a class="btn sec me-2" href="registration%20personal.html" role="button"
+                                       type="submit">Cancel</a>
+                                    <!--<button class="btn prim" type="submit">Register</button>-->
+                                    <a class="btn prim" href="my-accommodation.html" role="button" type="submit">Register</a>
                                 </div>
 
 
@@ -143,6 +184,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+<script src="acc-reg.js"></script>
 
 </body>
 <footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">

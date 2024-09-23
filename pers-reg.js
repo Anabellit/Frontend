@@ -1,3 +1,25 @@
+$(document).ready(function () {
+    $('#pers-reg-form').submit(function (e) {
+        e.preventDefault();
+
+        const salut = $('#select-salut').val();
+        const other = $('#other').val();
+        const email = $('#email').val();
+        const pw = $('#pw').val();
+        const pw2 = $('#pw2').val();
+        const country = $('#select-country').val();
+        const file = $('#formFile').val();
+        const url = $(this).attr('action');
+
+        $.post(url, {salut:salut, other:other, email:email, pw:pw, pw2:pw2, country: country, file:file}).done(function(data) {
+            console.log('New User Saved Successfully');
+            console.log(data);
+        });
+    });
+});
+
+
+/*
 var token = ""
 
 $('#btn-pers-reg').on('click', async function () {
@@ -23,4 +45,4 @@ $('#btn-pers-reg').on('click', async function () {
             addItemToQuestionList(response)
         })
 
-})
+})*/
