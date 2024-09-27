@@ -16,8 +16,19 @@ $('#btn-login').on('click', function() {
         contentType: "application/json",
     })
         .done(function(response, status, xhr) {
+
+            (console.log(response,'response'));
+            (console.log( 'status', status));
+            (console.log( 'xhr', xhr));
             //token
-            token = xhr.getResponseHeader("Authorization")
+            token = response['accessToken']
+
+            console.log('token', token)
+
+            if (!token && response.token)
+            {
+                token = response.token;
+            }
             // mal zum überprüfen ob er erhalten wurde
             if (token) {
                 console.log("Token erhalten:", token);
@@ -27,9 +38,11 @@ $('#btn-login').on('click', function() {
 
 
             $('#result').val(JSON.stringify(response));
-            $('#login-form').fadeOut();
+
         })
-        .fail(function(xhr, status, error) {
+        .fail(function(status, xhr, error) {
+            console.log("Fehler beim Login:", status);
+            console.log("Fehler beim Login:", xhr);
             console.log("Fehler beim Login:", error);
         });
 });
