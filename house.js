@@ -51,9 +51,12 @@ $(document).ready(function() {
                 // Iteriere durch die erhaltenen Häuser und füge sie zur Liste hinzu
                 response.forEach(function(house) {
                     $('#houses-list').append(
-                        '<li><strong>' + house.title + '</strong> (' + house.country + ')<br>' +
-                        'Type: ' + house.typeOfHouse + '<br>' +
-                        'Description: ' + house.shortDescription + '<br><br></li>'
+                        '<div class="col-4">' + '<a class="card" href="acc-details.html" style="text-decoration: none;">'
+                        + '<img src="https://picsum.photos/id/441/200" class="card-img-top" alt="...">' +
+                        '<div class="card-body" href="#">' +
+                        '<p class="card-title card-tag">' + house.typeOfHouse + '</p>' +
+                        '<p class="card-text" style="font-size: 14px">' + house.country + '</p>' +
+                        '</div>' + '</a>' + '</div>'
                     );
                 });
             },
