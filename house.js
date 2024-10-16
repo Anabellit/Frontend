@@ -37,7 +37,6 @@ $(document).ready(function() {
     });
 });
 
-
 $(document).ready(function() {
     // Funktion, um die Liste der Häuser vom Backend abzurufen
     function loadHouses() {
@@ -51,12 +50,16 @@ $(document).ready(function() {
                 // Iteriere durch die erhaltenen Häuser und füge sie zur Liste hinzu
                 response.forEach(function(house) {
                     $('#houses-list').append(
-                        '<div class="col-4">' + '<a class="card" href="acc-details.html" style="text-decoration: none;">'
-                        + '<img src="https://picsum.photos/id/441/200" class="card-img-top" alt="...">' +
-                        '<div class="card-body" href="#">' +
-                        '<p class="card-title card-tag">' + house.typeOfHouse + '</p>' +
+                        '<div class="col">' +
+                        '<a class="card h-80" href="acc-details.html" style="text-decoration: none;">' +
+                        '<img src="https://picsum.photos/200/200" class="card-img-top" alt="House Image">' + // Beispielbild
+                        '<div class="card-body">' +
+                        '<h5 class="card-title card-tag">' + house.typeOfHouse + '</h5>' +
                         '<p class="card-text" style="font-size: 14px">' + house.country + '</p>' +
-                        '</div>' + '</a>' + '</div>'
+                        '</div>' +
+                        '</a>' +
+                        '</div>' +
+                        '</div>'
                     );
                 });
             },
