@@ -8,6 +8,9 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/editUserprofile"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
@@ -29,8 +32,7 @@
                 </li>
 
                 <li class="nav-item col-3" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests<span
-                            class="badge rounded-pill bg-danger">4</span>
+                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests
                     </a>
                 </li>
 
@@ -38,7 +40,7 @@
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false" style="color: floralwhite">
-                        Mimi Sierra
+                        My Profile
                     </a>
 
                     <ul class="dropdown-menu">
@@ -70,7 +72,7 @@
     <!--form-->
     <!--profile card-->
     <div class="row row-cols-auto">
-        <form class="was-validated novalidate">
+        <form id="edit-user-form" class="was-validated novalidate">
             <div class="row row-cols-auto pe-3">
                 <div class="card ms-2">
                     <div class="card-body">
@@ -83,7 +85,7 @@
                             <div class="col-5 pt-3">
                                 <label for="salut" class="col-form-label mb-1">Salutation:</label><br>
                                 <label for="country" class="col-form-label">Country:</label><br>
-                                <label for="username" class="col-form-label mb-1">Email address:</label>
+                                <label for="username" class="col-form-label mb-1">Username:</label>
                             </div>
                             <div class="col-7 pt-3">
                                 <select class="form-select input-width" id="salut" aria-label="Salutation Options">
@@ -98,17 +100,16 @@
                                     <option value="France">France</option>
                                 </select>
                                 <div>
-                                <input type="email" id="username" class="input-width" value="mimi@sierra.com"
-                                       style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
+                                    <input type="text" id="username" class="input-width"
+                                           style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
                                     <div class="invalid-feedback">Please enter a valid e-mail address.</div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-12 text-end">
-                                <a class="btn sec me-2" href="user-profile.html" role="button" type="submit">Cancel</a>
-                                <a class="btn prim" href="user-profile.html" role="button" type="submit">Save</a>
+                                <a class="btn sec me-2" href="user-profile.html" role="button">Cancel</a>
+                                <button type="submit" class="btn prim" id="update-userprofile">Save</button> <!-- Ändere 'a' zu 'button' -->
                             </div>
                         </div>
                     </div>

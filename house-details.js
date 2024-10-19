@@ -1,7 +1,22 @@
 $(document).ready(function () {
+    // Funktion zum Auslesen des URL-Parameters (Haus-ID)
+    function getUrlParameter(name) {
+        let params = new URLSearchParams(window.location.search);
+        return params.get(name);
+    }
+
+    // Hole die Haus-ID aus der URL
+    let houseId = getUrlParameter('id');
+
+    // Funktion zum Laden des Hauses basierend auf der Haus-ID
     function loadHouse() {
+        if (!houseId) {
+            alert('No house ID found in the URL');
+            return;
+        }
+
         $.ajax({
-            url: 'http://localhost:8080/houses/2',  // Der GET-Endpunkt für das Haus mit ID 1
+            url: 'http://localhost:8080/houses/' + houseId,  // Dynamische URL mit der Haus-ID
             type: 'GET',
             success: function (response) {
                 // Fülle die HTML-Elemente mit den Daten des Hauses
@@ -12,37 +27,13 @@ $(document).ready(function () {
                 $('#houseLong').html(response.longDescription);
 
                 // Zeige oder verstecke die Amenities je nach Wert vom Backend
-                if (response.hasSelfCheckin) {
-                    $('#checkin').show();
-                } else {
-                    $('#checkin').hide();
-                }
+                $('#checkin').toggle(response.hasSelfCheckin);
+                $('#kitchen').toggle(response.hasKitchen);
+                $('#wifi').toggle(response.hasWifi);
+                $('#streaming').toggle(response.hasStreaming);
+                $('#homeoffice').toggle(response.hasHomeOffice);
 
-                if (response.hasKitchen) {
-                    $('#kitchen').show();
-                } else {
-                    $('#kitchen').hide();
-                }
-
-                if (response.hasWifi) {
-                    $('#wifi').show();
-                } else {
-                    $('#wifi').hide();
-                }
-
-                if (response.hasStreaming) {
-                    $('#streaming').show();
-                } else {
-                    $('#streaming').hide();
-                }
-
-                if (response.hasHomeOffice) {
-                    $('#homeoffice').show();
-                } else {
-                    $('#homeoffice').hide();
-                }
-
-                // Für Supermarkets als Beispiel statisch gelassen
+                // Für Supermarkets als Beispiel statisch gelassen, falls benötigt, anpassbar
             },
             error: function (xhr, status, error) {
                 console.error('Error: ' + error);
@@ -54,6 +45,8 @@ $(document).ready(function () {
     // Lade das Haus beim Laden der Seite
     loadHouse();
 });
+
+
 
 
 
