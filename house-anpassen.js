@@ -1,11 +1,35 @@
 $(document).ready(function () {
-    const houseId = 1;  // Beispiel: Die ID des Hauses, dessen Daten du laden möchtest
+    // Funktion, um den JWT-Token aus dem LocalStorage zu holen
+    function getToken() {
+        return localStorage.getItem('jwtToken');
+    }
+
+    // Funktion, um die User-ID aus dem JWT-Token zu extrahieren
+    function getUserIdFromToken(token) {
+        var decodedToken = jwt_decode(token);
+        return decodedToken.sub;  // Annahme: Die User-ID ist im "sub"-Claim
+    }
 
     // GET-Request, um die bestehenden Daten vom Backend zu laden und das Formular zu befüllen
     function loadHouseData() {
+        var token = getToken();
+        if (!token) {
+            alert('Kein Token gefunden. Bitte einloggen.');
+            return;
+        }
+
+        var userId = getUserIdFromToken(token);
+        if (!userId) {
+            alert('Benutzer-ID im Token nicht gefunden.');
+            return;
+        }
+
         $.ajax({
-            url: 'http://localhost:8080/houses/' + houseId,  // Der GET-Endpunkt, um die Hausdaten abzurufen
+            url: `http://localhost:8080/houses/user/${userId}`,  // Dynamische User-ID in der URL
             type: 'GET',
+            headers: {
+                "Authorization": "Bearer " + token  // JWT-Token im Authorization-Header mitsenden
+            },
             success: function (response) {
                 // Fülle die Formularfelder mit den erhaltenen Daten
                 $('#select-type').val(response.typeOfHouse);
@@ -22,8 +46,8 @@ $(document).ready(function () {
                 $('#checkin').prop('checked', response.hasSelfCheckin);
             },
             error: function (xhr, status, error) {
-                console.error('Error loading house data: ' + error);
-                alert('An error occurred while loading the house data.');
+                console.error('Fehler beim Laden der Hausdaten: ' + error);
+                alert('Ein Fehler ist beim Laden der Hausdaten aufgetreten.');
             }
         });
     }
@@ -35,8 +59,21 @@ $(document).ready(function () {
     $('#house-form').submit(function (event) {
         event.preventDefault();  // Verhindert den normalen Submit des Formulars
 
-        // Sammle die aktuellen Daten aus den Formularfeldern
+        var token = getToken();
+        if (!token) {
+            alert('Kein Token gefunden. Bitte einloggen.');
+            return;
+        }
+
+        var userId = getUserIdFromToken(token);
+        if (!userId) {
+            alert('Benutzer-ID im Token nicht gefunden.');
+            return;
+        }
+
+        // Sammle die aktuellen Daten aus den Formularfeldern und füge die userId hinzu
         let houseData = {
+            userId: userId,  // Füge die userId hinzu
             typeOfHouse: $('#select-type').val(),
             country: $('#select-country-house').val(),
             title: $('#title').val(),
@@ -53,19 +90,30 @@ $(document).ready(function () {
 
         // AJAX PUT-Request zum Aktualisieren des Hauses
         $.ajax({
-            url: 'http://localhost:8080/houses/' + houseId,  // Der PUT-Endpunkt zum Speichern des aktualisierten Hauses
+            url: `http://localhost:8080/houses/user/${userId}`,  // Dynamische User-ID in der URL
             type: 'PUT',
+            headers: {
+                "Authorization": "Bearer " + token  // JWT-Token im Authorization-Header mitsenden
+            },
             contentType: 'application/json',
-            data: JSON.stringify(houseData),
+            data: JSON.stringify(houseData),  // Sende die Daten im JSON-Format
             success: function (response) {
-                alert('House updated successfully!');
+                alert('Haus erfolgreich aktualisiert!');
                 window.location.href = "my-accommodation.html";
             },
             error: function (xhr, status, error) {
-                console.error('Error updating house: ' + error);
-                alert('An error occurred while updating the house.');
+                console.error('Fehler beim Aktualisieren des Hauses: ' + error);
+
+                // Zusätzliche Debugging-Informationen
+                console.error('Status: ' + status);
+                console.error('Response Status: ' + xhr.status);
+                console.error('Response Text: ' + xhr.responseText);
+                console.error('Response JSON: ', xhr.responseJSON);
+                console.error('XHR Object: ', xhr);
+
+                // Zeige die Fehlermeldung an
+                alert('Ein Fehler ist beim Aktualisieren des Hauses aufgetreten. Status: ' + xhr.status + ', Details: ' + xhr.responseText);
             }
         });
     });
 });
-

@@ -83,16 +83,11 @@
                         </div>
                         <div class="row">
                             <div class="col-5 pt-3">
-                                <label for="salut" class="col-form-label mb-1">Salutation:</label><br>
                                 <label for="country" class="col-form-label">Country:</label><br>
-                                <label for="username" class="col-form-label mb-1">Username:</label>
+                                <label for="username" class="col-form-label mb-1">Username:</label><br>
+                                <label for="email" class="col-form-label mb-1">Email:</label><br>
                             </div>
                             <div class="col-7 pt-3">
-                                <select class="form-select input-width" id="salut" aria-label="Salutation Options">
-                                    <option selected>Ms.</option>
-                                    <option value="Mrs">Mr.</option>
-                                    <option value="Other">Other</option>
-                                </select>
 
                                 <select class="form-select input-width" id="country" aria-label="Country Options">
                                     <option selected>Austria</option>
@@ -102,7 +97,11 @@
                                 <div>
                                     <input type="text" id="username" class="input-width"
                                            style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
-                                    <div class="invalid-feedback">Please enter a valid e-mail address.</div>
+                                    <div class="invalid-feedback">Please enter a valid username.</div>
+                                </div>
+                                <div>
+                                    <input type="email" id="email" class="input-width"
+                                           style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
                                 </div>
                             </div>
                         </div>

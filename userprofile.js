@@ -26,14 +26,17 @@ $(document).ready(function () {
             },
             success: function (response) {
                 // Fülle die HTML-Elemente mit den Benutzerdaten
-                $('#salut').html(response.salutation);
                 $('#username').html(response.username);
                 $('#country').html(response.country);
+                $('#email').html(response.email);
             },
             error: function (xhr, status, error) {
-                console.error('Fehler beim Abrufen der Benutzerdaten:', xhr.responseText, status, error);
-                alert(`Ein Fehler ist aufgetreten: ${xhr.status} - ${xhr.statusText}`);
+                console.error('Fehler beim Abrufen der Benutzerdaten:', error);
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);  // Logge die genaue Fehlermeldung
+                alert('Ein Fehler ist aufgetreten: ' + status + ' - ' + xhr.responseText);
             }
+
         });
 
     }

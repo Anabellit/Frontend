@@ -91,7 +91,7 @@
                     <div>
                         <label for="psw" class="form-label pt-3">Password *</label>
                         <input type="password" id="psw" class="form-control" aria-describedby="passwordHelpBlock"
-                               required>
+                               required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}">
                         <div class="col-12 text-end">
                             <span id="passwordHelpBlock" class="form-text text-end"> min. 12 characters: uppercase, lowercase, numbers and symbols (.!?: ).</span>
                         </div>

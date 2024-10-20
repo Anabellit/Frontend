@@ -31,7 +31,7 @@ $(document).ready(function() {
 
         // AJAX-Aufruf an das Backend
         $.ajax({
-            url: 'http://localhost:8080/houses',  // Der Endpunkt im Backend, der die House-Daten verarbeitet
+            url: 'http://localhost:8080/houses/register',  // Der Endpunkt im Backend, der die House-Daten verarbeitet
             type: 'POST',     // HTTP-Methode POST
             contentType: 'application/json',  // Datenformat, das gesendet wird (JSON)
             data: JSON.stringify(houseData),  // Daten in JSON-Format umwandeln und senden

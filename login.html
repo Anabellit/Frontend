@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="password" class="form-label work pt-3">Password *</label>
                         <input type="password" id="password" class="form-control work" aria-describedby="passwordHelpBlock"
-                               required>
+                               required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{12,}">
                         <div class="invalid-feedback">Please enter your valid password.</div>
                         <div class="valid-feedback">Looks good!</div>
                     </div>
@@ -65,13 +65,13 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div class="col p-4">
                 <p class="work">(Nur zu Testzwecken) Ergebnis:</p>
                 <textarea id="result" class="form-control"></textarea>
             </div>
             <a class="btn prim" href="search-accommodation.html" role="button" type="submit">Login</a>
-        </div>
+        </div>-->
         <p></p>
     </form>
 
