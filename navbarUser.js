@@ -27,9 +27,7 @@ $(document).ready(function () {
             success: function (response) {
                 // Fülle die HTML-Elemente mit den Benutzerdaten
                 $('#nav-username').html(response.username);
-                $('#username').html(response.username);
-                $('#country').html(response.country);
-                $('#email').html(response.email);
+
             },
             error: function (xhr, status, error) {
                 console.error('Fehler beim Abrufen der Benutzerdaten:', error);

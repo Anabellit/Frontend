@@ -27,6 +27,7 @@ $(document).ready(function () {
             },
             success: function (response) {
                 // Fülle das Formular mit den Benutzerdaten
+                $('#nav-username').html(response.username);
                 $('#country').val(response.country);   // Country in das Dropdown setzen
                 $('#username').val(response.username);    // Benutzername in das Eingabefeld setzen
                 $('#email').val(response.email);         // E-Mail in das Eingabefeld setzen

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/navbarUser.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
@@ -38,8 +42,8 @@
                 <li class="nav-item dropdown-center col-3 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false" style="color: floralwhite">
-                        My Profile
+                       aria-expanded="false" style="color: floralwhite" id="nav-username">
+                        <!--Platzhalter für Username-->
                     </a>
 
                     <ul class="dropdown-menu">
@@ -100,7 +104,7 @@
             <hr>
             <ul class="list-inline">
                 <li class="list-inline-item"><i class="bi-person-circle icons-prim"></i></li>
-                <li class="list-inline-item info">Host Mimi Sierra</li>
+                <li class="list-inline-item info" id="host-user"><!--Platzhalter Eigentümer des Hauses--></li>
             </ul>
             <hr>
             <p id="houseLong"><!--Long Description Platzhalter--></p>
@@ -194,6 +198,7 @@
         crossorigin="anonymous"></script>
 <script src="house-details.js"></script>
 <script src="houseswap.js"></script>
+<script src="navbarUser.js"></script>
 </body>
 <footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
     <div class="container-lg">

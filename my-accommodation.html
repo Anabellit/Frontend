@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
-    <script src="path/to/login.js"></script> <!-- Hier den Pfad zur JS-Datei anpassen -->
+    <script src="path/to/login.js"></script>
 
 </head>
 <body>
@@ -43,8 +43,8 @@
                 <li class="nav-item dropdown-center col-3 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false" style="color: floralwhite">
-                        My Profile
+                       aria-expanded="false" style="color: floralwhite" id="nav-username">
+                        <!--Platzhalter für Username-->
                     </a>
 
                     <ul class="dropdown-menu">
@@ -103,7 +103,7 @@
             <hr>
             <ul class="list-inline">
                 <li class="list-inline-item"><i class="bi-person-circle icons-prim"></i></li>
-                <li class="list-inline-item info">Host Mimi Sierra</li>
+                <li class="list-inline-item info" id="host-user"><!--Platzhalter für Username--></li>
             </ul>
             <hr>
             <p id="houseLong"><!--Long Description Platzhalter--></p>
@@ -173,6 +173,7 @@
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
 <script src="my-house-details.js"></script>
+
 </body>
 <footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
     <div class="container-lg">
