@@ -39,8 +39,8 @@
                 <li class="nav-item dropdown-center col-3 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false" style="color: floralwhite">
-                        My Profile
+                       aria-expanded="false" style="color: floralwhite" id="nav-username">
+                        <!--Platzhalter für Username-->
                     </a>
 
                     <ul class="dropdown-menu">
@@ -95,7 +95,7 @@
             <hr>
             <ul class="list-inline">
                 <li class="list-inline-item"><i class="bi-person-circle icons-prim"></i></li>
-                <li class="list-inline-item info">Host Mimi Sierra</li>
+                <li class="list-inline-item info" id="host-user"><!--Platzhalter Eigentümer des Hauses--></li>
             </ul>
             <hr>
             <p id="houseLong"><!--Long Description Platzhalter--></p>
@@ -162,7 +162,7 @@
     <div class="row">
         <hr>
         <div class="col-6 pt-1">
-            <h6>Your Message:</h6>
+            <h6>Message:</h6>
             <p id="swapMessage"><!--Swapmessage Platzhalter--></p>
             <!--<div class="row">
                 <div class="col-12 text-end">
@@ -171,8 +171,9 @@
             </div>-->
             <div class="row">
                 <div class="col-12 text-end">
-                    <a class="btn sec" href="requests.html" role="button" id="swap-decline" type="submit">Decline</a>
-                    <a class="btn prim" href="requests.html" role="button" id="swap-accept" type="submit">Accept</a>
+                    <a class="btn sec" href="requests.html" role="button" id="swap-decline" type="submit" style="display:none;">Decline</a>
+                    <a class="btn prim" href="requests.html" role="button" id="swap-accept" type="submit" style="display:none;">Accept</a>
+
                 </div>
             </div>
         </div>
@@ -184,6 +185,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="request-pending.js"></script>
+<script src="navbarUser.js"></script>
 
 
 </body>

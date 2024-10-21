@@ -59,6 +59,7 @@ $(document).ready(function () {
                             // Übergebe die userId als URL-Parameter zur admin-edit-user-profile.html-Seite
                             '<li><a class="dropdown-item" href="admin-edit-user-profile.html?userId=' + house.userId + '">Edit User Profile</a></li>' +
                             '<li><a class="dropdown-item" href="admin-edit-accommodation.html?houseId=' + house.id + '">Edit Accommodation</a></li>' +
+                            '<li><a class="dropdown-item" href="admin-edit-user-requests.html?houseId=' + house.id + '">Edit Request</a></li>' +
                             '</ul>' +
                             '</div>' +
                             '</td>' +
