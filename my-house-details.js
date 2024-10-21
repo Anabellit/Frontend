@@ -80,6 +80,12 @@ $(document).ready(function () {
                 $('#houseShort').html(response.shortDescription);
                 $('#houseLong').html(response.longDescription);
 
+                // Houseid anzeigen (Test)
+                $('#house-id').html(response.id);
+
+                // houseid an edit accommodation url anhängen
+                $('#edit-accommodation-btn').attr('href', 'edit-accommodation.html?houseId=' + response.id);
+
                 // Zeige oder verstecke die Amenities je nach Wert vom Backend
                 $('#checkin').toggle(response.hasSelfCheckin);
                 $('#kitchen').toggle(response.hasKitchen);

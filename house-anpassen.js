@@ -82,6 +82,7 @@ $(document).ready(function () {
             success: function (response) {
                 // Fülle das Feld "host-user" mit dem Benutzernamen
                 $('#host-user').text(response.username);
+                $('#userid').html(userId);
             },
             error: function (xhr, status, error) {
                 console.error('Fehler beim Abrufen des Benutzers:', error);
@@ -106,6 +107,11 @@ $(document).ready(function () {
             return;
         }
 
+        //if (userId) {
+        //    alert('Benutzer-ID: ' + userId);
+        //    return;
+        //}
+
         // Sammle die aktuellen Daten aus den Formularfeldern
         let houseData = {
             typeOfHouse: $('#select-type').val(),
@@ -119,7 +125,8 @@ $(document).ready(function () {
             hasStreaming: $('#streaming').is(':checked'),
             hasHomeOffice: $('#homeoffice').is(':checked'),
             nearSupermarkets: $('#supermarkets').is(':checked'),
-            hasSelfCheckin: $('#checkin').is(':checked')
+            hasSelfCheckin: $('#checkin').is(':checked'),
+            userId: userId
         };
 
         // PUT-Request zum Aktualisieren der Unterkunft
@@ -133,11 +140,13 @@ $(document).ready(function () {
             data: JSON.stringify(houseData),  // Sende die Daten im JSON-Format
             success: function (response) {
                 alert('Änderungen erfolgreich gespeichert!');
-                window.location.href = "admin-dashboard.html";  // Zurück zum Dashboard
+                window.location.href = "my-accommodation.html";  // Zurück zu my-accommodation
             },
             error: function (xhr, status, error) {
                 console.error('Fehler beim Speichern der Änderungen:', error);
-                alert('Ein Fehler ist aufgetreten beim Speichern der Änderungen.');
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);  // Logge die genaue Fehlermeldung
+                alert('Ein Fehler ist aufgetreten: ' + status + ' - ' + xhr.responseText);
             }
         });
     });
