@@ -53,7 +53,7 @@ $('#btn-login').on('click', function (event) {
                 console.log("Kein Token erhalten.");
             }
 
-            // Weiterleitung zur nächsten Seite, wenn der Login erfolgreich war
+            // Weiterleitung zur nächsten Seite, wenn der Login erfolgreich war // hier abhängig von Rolle machen!
             window.location.href = "user-profile.html";
 
         })
