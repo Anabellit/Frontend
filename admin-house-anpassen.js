@@ -119,7 +119,8 @@ $(document).ready(function () {
             hasStreaming: $('#streaming').is(':checked'),
             hasHomeOffice: $('#homeoffice').is(':checked'),
             nearSupermarkets: $('#supermarkets').is(':checked'),
-            hasSelfCheckin: $('#checkin').is(':checked')
+            hasSelfCheckin: $('#checkin').is(':checked'),
+            userId: userId
         };
 
         // PUT-Request zum Aktualisieren der Unterkunft

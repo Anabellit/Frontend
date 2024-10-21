@@ -48,6 +48,7 @@ $(document).ready(function () {
                 $('#country').val(response.country);   // Country in das Dropdown setzen
                 $('#username').val(response.username);    // Benutzername in das Eingabefeld setzen
                 $('#email').val(response.email);         // E-Mail in das Eingabefeld setzen
+                $('#roleAdmin').val(userRole);
 
                 // Passwort wird nicht zurückgegeben, daher bleibt das Feld leer
                 $('#password').val("");  // Leer lassen, wenn der Benutzer es nicht ändern möchte
@@ -96,7 +97,7 @@ $(document).ready(function () {
             data: JSON.stringify(updatedUserProfileData),  // Sende die Daten im JSON-Format
             success: function (response) {
                 alert('Profil erfolgreich aktualisiert!');
-                window.location.href = "user-profile.html";  // Leite zurück zum Profil
+                window.location.href = "admin-dashboard.html";  // Leite zurück zum Profil
             },
             error: function (xhr, status, error) {
                 console.error('Fehler beim Aktualisieren der Benutzerdaten:', error);
@@ -134,18 +135,21 @@ $(document).ready(function () {
 
         // DELETE-Request zum Löschen des Benutzers
         $.ajax({
-            url: `http://localhost:8080/users/delete/${userId}`,  // Verwende die userId aus der URL
-            type: 'DELETE',
+            type: "DELETE",
+            url: `http://localhost:8080/users/delete/${userId}`,
             headers: {
                 "Authorization": "Bearer " + token  // JWT-Token im Authorization-Header mitsenden
             },
-            success: function (response) {
-                alert('Benutzer erfolgreich gelöscht.');
-                window.location.href = "admin-dashboard.html";  // Leite nach dem Löschen zum Dashboard zurück
+            success: function(response) {
+                alert("Benutzer erfolgreich gelöscht!");
+                window.location.href = "user-management.html";
             },
-            error: function (xhr, status, error) {
-                console.error('Fehler beim Löschen des Benutzers:', error);
-                alert('Ein Fehler ist aufgetreten: ' + xhr.responseText);
+            error: function(xhr, status, error) {
+                console.error("Fehler beim Löschen des Benutzers:", status);
+                console.error("Fehler:", error);
+                console.error("Response:", xhr.responseText);  // Detaillierte Fehlermeldung loggen
+
+                alert("Ein Fehler ist aufgetreten: " + status + " - " + (xhr.responseText || "Keine Details verfügbar."));
             }
         });
     });
