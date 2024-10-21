@@ -47,7 +47,7 @@ $(document).ready(function () {
         }
 
         if (!houseId) {
-            alert('No house ID found in the URL');
+            alert('No house ID found in the URL house-details');
             return;
         }
 
@@ -74,6 +74,9 @@ $(document).ready(function () {
 
                 // Lade die Benutzerdaten basierend auf der User-ID des Hauses
                 loadUserForHouse(response.userId);  // Verwende die User-ID aus der Antwort des Hauses
+
+                // Füge die houseId dem Edit-Button-URL hinzu
+                $('#edit-accommodation-btn').attr('href', 'edit-accommodation.html?houseId=' + houseId);
             },
             error: function (xhr, status, error) {
                 console.error('Fehler beim Abrufen der Hausdetails:', error);
