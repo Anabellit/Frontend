@@ -68,19 +68,19 @@
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-3 me-5">
         <div class="col">
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search for Country or Type of House" id="suche" aria-label="Search">
                 <button class="btn prim" type="submit">Search</button>
             </form>
         </div>
         <div class="col">
-            <select class="form-select info" aria-label="Country">
-                <option selected>Filter by: Region</option>
+            <select class="form-select info" aria-label="Country" id="suche-country">
+                <option selected>Filter by: Country</option>
                 <option value="Austria">Austria</option>
                 <option value="Germany">Germany</option>
                 <option value="France">France</option>
             </select></div>
         <div class="col">
-            <select class="form-select info" aria-label="Type of Housing">
+            <select class="form-select info" aria-label="Type of Housing" id="suche-type">
                 <option selected>Filter by: Type of Housing</option>
                 <option value="House">House</option>
                 <option value="Apartment">Apartment</option>
@@ -100,7 +100,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="navbarUser.js"></script>
-<script src="house.js"></script>
+<script src="search-accommodation.js"></script>
 
 </body>
 <footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">
