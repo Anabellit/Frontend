@@ -28,12 +28,12 @@
     </div>
     <!--CARD-->
     <!--LEFT-->
-    <form class="was-validated novalidate">
+    <form class="was-validated novalidate" id="house-form">
         <div class="row m-1">
-            <div class="card col-12 p-2">
-                <div class="card-body col-12 ps-4 pe-0">
+            <div class="card col-8 p-2">
+                <div class="card-body col-12 ps-5 pe-5">
                     <div class="row gx-5">
-                        <div class="col-6">
+                        <div class="col-12">
 
                             <p class="tag">Basic Information</p>
                             <div>
@@ -111,16 +111,8 @@
                                 </div>
                                 <div class="valid-feedback">Looks good!</div>
                             </div>
-                        </div>
 
-                        <div class="d-flex col-1 pe-0" style="height: 700px;">
-                            <div class="vr"></div>
-                        </div>
-
-                        <!-- RIGHT-->
-                        <div class="col-5 ps-0 pe-5">
-                            <p></p>
-                            <p class="tag pt-3">Amenities</p>
+                            <p class="tag pt-5">Amenities</p>
                             <p></p>
                             <div class="row">
                                 <div class="col-6">
@@ -137,45 +129,29 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="streaming" id="streaming">
+                                        <input class="form-check-input" type="checkbox" value="streaming"
+                                               id="streaming">
                                         <label class="form-check-label" for="streaming">Streaming</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="homeoffice" id="homeoffice">
+                                        <input class="form-check-input" type="checkbox" value="homeoffice"
+                                               id="homeoffice">
                                         <label class="form-check-label" for="homeoffice">Home Office</label></div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="supermarkets" id="supermarkets">
-                                        <label class="form-check-label" for="supermarkets">Supermarkets</label></div>
                                 </div>
                             </div>
-
-
-                            <p class="tag pt-5">Photos of your Accommodation</p>
-                            <label for="formFile" class="form-label">Photos *</label>
-                            <input class="form-control" type="file" id="formFile" aria-describedby="fileHelper" required
-                                   multiple>
+                        </div>
+                        <p></p>
+                        <div class="row pt-3">
                             <div class="col-12 text-end">
-                <span id="fileHelper"
-                      class="form-text">max. file size 1024MB. Allowed formats: .jpg, .png, .gif</span>
+                                <a class="btn sec me-2" href="registration%20personal.html" role="button"
+                                   type="submit">Cancel</a>
+                                <button class="btn prim" type="submit">Register</button>
                             </div>
-                            <p></p>
-                            <p></p>
-                            <div class="row">
-                                <div class="col-12 text-end">
-                                    <a class="btn sec me-2" href="registration%20personal.html" role="button"
-                                       type="submit">Cancel</a>
-                                    <!--<button class="btn prim" type="submit">Register</button>-->
-                                    <a class="btn prim" href="registration%20confirmation.html" role="button" type="submit">Register</a>
-                                </div>
 
-
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

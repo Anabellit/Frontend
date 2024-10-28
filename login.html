@@ -8,6 +8,10 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/login.js"></script> <!-- Hier den Pfad zur JS-Datei anpassen -->
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
@@ -23,9 +27,6 @@
         <div class="col-5">
             <h4>Log in</h4>
         </div>
-        <!--<div class="col-6 text-start">
-            <p>1/5</p>
-        </div>-->
     </div>
 
     <!--form-->
@@ -35,10 +36,10 @@
                 <p></p>
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="email" class="form-label work pt-3">Email address *</label>
-                        <input type="email" class="form-control work" id="email" placeholder="name@example.com"
+                        <label for="username" class="form-label work pt-3">Username *</label>
+                        <input type="text" class="form-control work" id="username" placeholder=""
                                required>
-                        <div class="invalid-feedback">Please enter a valid e-mail address.</div>
+                        <div class="invalid-feedback">Please enter your valid username.</div>
                         <div class="valid-feedback">Looks good!</div>
                     </div>
                     <div class="form-group">
@@ -49,25 +50,25 @@
                         <div class="valid-feedback">Looks good!</div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row pb-3">
                     <p></p>
                     <div class="col-12 text-end">
-                        <a class="btn sec m-2" href="password%20forgotten.html" role="button" type="submit">Forgot
-                            your password?</a>
-                        <button class="btn prim" type="submit" id="btn-login">Log in (JWT)</button>
+                        <!--<a class="btn sec m-2" href="password%20forgotten.html" role="button" type="submit">Forgot
+                            your password?</a>-->
+                        <button class="btn prim" type="submit" id="btn-login">Log in</button>
                         <!--<a class="btn prim" href="search-accommodation.html" role="button" type="submit">Log
                             in</a>-->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!--<div class="row">
             <div class="col p-4">
                 <p class="work">(Nur zu Testzwecken) Ergebnis:</p>
                 <textarea id="result" class="form-control"></textarea>
             </div>
             <a class="btn prim" href="search-accommodation.html" role="button" type="submit">Login</a>
-        </div>
+        </div>-->
         <p></p>
     </form>
 

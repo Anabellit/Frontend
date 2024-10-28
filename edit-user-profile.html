@@ -8,6 +8,9 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/editUserprofile"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
@@ -29,16 +32,15 @@
                 </li>
 
                 <li class="nav-item col-3" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests<span
-                            class="badge rounded-pill bg-danger">4</span>
+                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests
                     </a>
                 </li>
 
                 <li class="nav-item dropdown-center col-3 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false" style="color: floralwhite">
-                        Mimi Sierra
+                       aria-expanded="false" style="color: floralwhite" id="nav-username">
+                        <!--Platzhalter für Username-->
                     </a>
 
                     <ul class="dropdown-menu">
@@ -70,7 +72,7 @@
     <!--form-->
     <!--profile card-->
     <div class="row row-cols-auto">
-        <form class="was-validated novalidate">
+        <form id="edit-user-form" class="was-validated novalidate">
             <div class="row row-cols-auto pe-3">
                 <div class="card ms-2">
                     <div class="card-body">
@@ -81,16 +83,11 @@
                         </div>
                         <div class="row">
                             <div class="col-5 pt-3">
-                                <label for="salut" class="col-form-label mb-1">Salutation:</label><br>
                                 <label for="country" class="col-form-label">Country:</label><br>
-                                <label for="username" class="col-form-label mb-1">Email address:</label>
+                                <label for="username" class="col-form-label mb-1">Username:</label><br>
+                                <label for="email" class="col-form-label mb-1">Email:</label><br>
                             </div>
                             <div class="col-7 pt-3">
-                                <select class="form-select input-width" id="salut" aria-label="Salutation Options">
-                                    <option selected>Ms.</option>
-                                    <option value="Mrs">Mr.</option>
-                                    <option value="Other">Other</option>
-                                </select>
 
                                 <select class="form-select input-width" id="country" aria-label="Country Options">
                                     <option selected>Austria</option>
@@ -98,17 +95,20 @@
                                     <option value="France">France</option>
                                 </select>
                                 <div>
-                                <input type="email" id="username" class="input-width" value="mimi@sierra.com"
-                                       style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
-                                    <div class="invalid-feedback">Please enter a valid e-mail address.</div>
+                                    <input type="text" id="username" class="input-width"
+                                           style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
+                                    <div class="invalid-feedback">Please enter a valid username.</div>
                                 </div>
-
+                                <div>
+                                    <input type="email" id="email" class="input-width"
+                                           style="border-top-color: lightgray; border-radius: 4px; height: 40px; padding-left: 12px;" required>
+                                </div>
                             </div>
                         </div>
                         <div class="row pt-2">
                             <div class="col-12 text-end">
-                                <a class="btn sec me-2" href="user-profile.html" role="button" type="submit">Cancel</a>
-                                <a class="btn prim" href="user-profile.html" role="button" type="submit">Save</a>
+                                <a class="btn sec me-2" href="user-profile.html" role="button">Cancel</a>
+                                <button type="submit" class="btn prim" id="update-userprofile">Save</button> <!-- Ändere 'a' zu 'button' -->
                             </div>
                         </div>
                     </div>
@@ -116,44 +116,13 @@
             </div>
         </form>
 
-        <!--action card-->
-        <div class="row">
-            <div class="card col-sm-5 ms-2">
-                <div class="card-body">
-                    <p></p>
-                    <div class="row">
-                        <div class="col-12">
-                            <h6>Further Actions:</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <a class="btn btn-danger" href="index.html" role="button" type="submit">Delete Profile</a>
-                        </div>
-                    </div>
-                    <p></p>
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="pt-2 mb-0" style="font-weight: 600">Important information:</p></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <p>If you delete your User profile, all your data,
-                                including your Accommodation Profile
-                                will be <strong>permanently deleted!</strong></p>
-                        </div>
-                    </div>
-                    <p></p>
-                    <p></p>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <script src="editUserprofile.js"></script>
+
 
 </div>
 </body>

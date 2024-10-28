@@ -6,14 +6,15 @@
     <title>Admin: Edit Accommodation</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-
-<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/admin-house-anpassen.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
     <div class="container-lg">
-        <a class="navbar-brand aleg" href="search-accommodation.html" style="color: floralwhite; font-size:22px;"><i
+        <a class="navbar-brand aleg" style="color: floralwhite; font-size:22px;"><i
                 class="bi bi-house-check"></i> HouseSwap</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbartoggle"
@@ -24,33 +25,19 @@
         <div class="collapse navbar-collapse" id="navbartoggle">
             <ul class="nav work col-12" style="justify-content: flex-end">
 
-                <li class="nav-item col-3 pe-0" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link active work" href="search-accommodation.html" style="color: floralwhite">Search
-                        for Accommodation</a>
+                <li class="nav-item col-6 pe-0" style="display:flex; justify-content: flex-end">
+                    <a class="nav-link active work" href="admin-dashboard.html" style="color: floralwhite">Admin
+                        Dashboard</a>
                 </li>
 
-                <li class="nav-item col-3" style="display:flex; justify-content: flex-end">
-                    <a class="nav-link work" href="requests.html" style="color: floralwhite">Requests<span
-                            class="badge rounded-pill bg-danger">4</span>
-                    </a>
-                </li>
-
-                <li class="nav-item dropdown-center col-3 pe-0 work"
+                <li class="nav-item dropdown-center col-6 pe-0 work"
                     style="display: flex; justify-content: flex-end">
                     <a class="nav-link dropdown-toggle work" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false" style="color: floralwhite">
-                        Mimi Sierra
+                        Admin
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="user-profile.html">User Profile</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="my-accommodation.html">My Accommodation</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
                         <li><a class="dropdown-item" href="index.html">Log out</a></li>
                     </ul>
                 </li>
@@ -64,24 +51,24 @@
     <div class="row">
         <p></p>
         <div class="col-5">
-            <h3>Edit Accommodation: Mimi Sierra</h3>
+            <h3>Edit Accommodation: <span id="host-user" style="font-size: 1.75rem; font-weight:600"><!--Platzhalter Eigentümer der Unterkunft--></span></h3>
         </div>
     </div>
     <!--CARD-->
     <!--LEFT-->
-    <form class="was-validated novalidate">
+    <form class="was-validated novalidate" id="house-form">
         <div class="row m-1">
-            <div class="card col-12 p-2">
-                <div class="card-body col-12 ps-4 pe-0">
+            <div class="card col-8 p-2">
+                <div class="card-body col-12 ps-5 pe-5">
                     <div class="row gx-5">
-                        <div class="col-6">
+                        <div class="col-12">
 
                             <p class="tag">Basic Information</p>
                             <div>
                                 <label for="select-type" class="form-label">Type of Housing *</label>
                                 <select class="form-select" id="select-type" aria-label="Type of Housing" required>
-                                    <option disabled value="">Choose...</option>
-                                    <option selected value="Apartment">Apartment</option>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option value="Apartment">Apartment</option>
                                     <option value="House">House</option>
                                     <option value="Tiny House">Tiny House</option>
                                 </select>
@@ -92,10 +79,10 @@
                             <div>
                                 <label for="select-country-house" class="form-label pt-3">Country *</label>
                                 <select class="form-select" id="select-country-house" aria-label="Country" required>
-                                    <option disabled value="">Choose...</option>
+                                    <option selected disabled value="">Choose...</option>
                                     <option value="Austria">Austria</option>
                                     <option value="Germany">Germany</option>
-                                    <option selected value="France">France</option>
+                                    <option value="France">France</option>
                                 </select>
                                 <div class="invalid-feedback">Please choose the location of your accommodation.</div>
                                 <div class="valid-feedback">Looks good!</div>
@@ -152,16 +139,8 @@
                                 </div>
                                 <div class="valid-feedback">Looks good!</div>
                             </div>
-                        </div>
 
-                        <div class="d-flex col-1 pe-0" style="height: 700px;">
-                            <div class="vr"></div>
-                        </div>
-
-                        <!-- RIGHT-->
-                        <div class="col-5 ps-0 pe-5">
-                            <p></p>
-                            <p class="tag pt-3">Amenities</p>
+                            <p class="tag pt-5">Amenities</p>
                             <p></p>
                             <div class="row">
                                 <div class="col-6">
@@ -170,44 +149,36 @@
                                         <label class="form-check-label" for="checkin">Self Check-in</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="kitchen" id="kitchen" checked>
+                                        <input class="form-check-input" type="checkbox" value="kitchen" id="kitchen">
                                         <label class="form-check-label" for="kitchen">Kitchen</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="wifi" id="wifi" checked>
+                                        <input class="form-check-input" type="checkbox" value="wifi" id="wifi">
                                         <label class="form-check-label" for="wifi">WIFI</label></div>
                                 </div>
                                 <div class="col-6">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="streaming" id="streaming">
+                                        <input class="form-check-input" type="checkbox" value="streaming"
+                                               id="streaming">
                                         <label class="form-check-label" for="streaming">Streaming</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="homeoffice" id="homeoffice">
+                                        <input class="form-check-input" type="checkbox" value="homeoffice"
+                                               id="homeoffice">
                                         <label class="form-check-label" for="homeoffice">Home Office</label></div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="supermarkets" id="supermarkets">
+                                        <input class="form-check-input" type="checkbox" value="supermarkets"
+                                               id="supermarkets">
                                         <label class="form-check-label" for="supermarkets">Supermarkets</label></div>
                                 </div>
                             </div>
-
-
-                            <p class="tag pt-5">Photos of your Accommodation</p>
-                            <label for="formFile" class="form-label">Photos *</label>
-                            <input class="form-control" type="file" id="formFile" aria-describedby="fileHelper" required
-                                   multiple>
+                        </div>
+                        <p></p>
+                        <div class="row pt-3">
                             <div class="col-12 text-end">
-                <span id="fileHelper"
-                      class="form-text">max. file size 1024MB. Allowed formats: .jpg, .png, .gif</span>
+                                <a class="btn sec me-2" href="admin-dashboard.html" role="button"
+                                   type="submit">Cancel</a>
+                                <button class="btn prim" type="submit" id="submit-changes">Save</button>
                             </div>
-                            <p></p>
-                            <p></p>
-                            <div class="row">
-                                <div class="col-12 text-end">
-                                    <a class="btn sec me-2" href="../registration%20personal.html" role="button"
-                                       type="submit">Cancel</a>
-                                    <button class="btn prim" type="submit">Save</button>
-                                    <!--<a class="btn prim" href="my-accommodation.html" role="button" type="submit">Register</a>-->
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -221,6 +192,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+<script src="admin-house-anpassen.js"></script>
 
 </body>
 <footer class="d-flex py-3 mt-4 border-top" style="background-color: #6B9797; ">

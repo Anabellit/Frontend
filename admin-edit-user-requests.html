@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin: Dashboard</title>
+    <title>Admin: Edit User Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="path/to/admin-edit-user-request.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top col-12" style="background-color: #6B9797; ">
@@ -44,20 +46,28 @@
     </div>
 </nav>
 <div class="container-lg">
-    <p></p>
-    <h3>All Users and their Houses</h3>
-    <p></p>
 
+    <!--header bereich über form-->
+    <div class="row">
+        <p></p>
+        <div class="col-5">
+            <h4>Edit Requests</h4>
+        </div>
+        <!--<div class="col-6 text-start">
+            <p>1/5</p>
+        </div>-->
+    </div>
 
     <!--table-->
     <div class="row gy-5 table-responsive">
         <table class="table table-bordered table-striped table-hover mx-3">
             <thead>
             <tr>
-                <th scope="col">House ID</th>
-                <th scope="col">User</th>
-                <th scope="col">Country</th>
-                <th scope="col">Description</th>
+                <th scope="col">Requested House ID</th> <!--House das angefragt wurde-->
+                <th scope="col">Requested House Title</th> <!--Titel des angefragten Houses-->
+                <!--<th scope="col">User Requester</th>--> <!--Username des Users, der die Nachricht geschickt hat-->
+                <th scope="col">User Accepter</th> <!--Username des Users, der akzeptieren oder declinen muss-->
+                <th scope="col">Status Request</th> <!--Aktueller Request Status-->
                 <th scope="col">Actions</th>
             </tr>
             </thead>
@@ -69,13 +79,11 @@
         </table>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
-    <script src="admin-dashboard.js"></script>
+    <script src="admin-edit-user-request.js"></script>
 </div>
 </body>
 <footer class="d-flex py-3 mt-4 border-top fixed-bottom" style="background-color: #6B9797; ">
